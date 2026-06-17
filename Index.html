@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garden Tower Defense Values</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0b0b;
+    color:white;
+}
+
+h1{
+    text-align:center;
+    padding:30px;
+    color:#00ff88;
+    text-shadow:0 0 15px #00ff88;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    padding:20px;
+}
+
+.card{
+    width:300px;
+    background:#161616;
+    border:2px solid #00ff88;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 0 20px rgba(0,255,136,0.2);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(0,255,136,0.6);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:contain;
+    background:black;
+}
+
+.info{
+    padding:15px;
+    text-align:center;
+}
+
+.name{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:26px;
+    color:gold;
+    text-shadow:0 0 10px gold;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<h1>🌿 Garden Tower Defense Values 🌿</h1>
+
+<div class="container">
+
+    <div class="card">
+        <img src="https://static.wikia.nocookie.net/gtd/images/2/2e/Teslaflora.webp/revision/latest?cb=20251101215241" alt="Teslaflora">
+        <div class="info">
+            <div class="name">⚡ Teslaflora</div>
+            <div class="price">74,5K</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://static.wikia.nocookie.net/gtd/images/1/1d/Lucky_Clover_in_inv.png/revision/latest?cb=20260315215038" alt="Lucky Clover">
+        <div class="info">
+            <div class="name">🍀 Lucky Clover</div>
+            <div class="price">9,4K</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://static.wikia.nocookie.net/gtd/images/e/e8/LAVA-GOLEM.png/revision/latest?cb=20260616205838" alt="Lava Golem">
+        <div class="info">
+            <div class="name"> Lava Golem</div>
+            <div class="price">6K</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
