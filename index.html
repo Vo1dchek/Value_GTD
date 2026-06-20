@@ -4,29 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Garden Tower Defense Values</title>
-<!-- Форма поиска -->
-<input type="text" id="search-input" placeholder="Введите слово для поиска...">
-<button onclick="pageSearch()">Искать</button>
-
-<!-- Текст, в котором ищем (для примера) -->
-<div id="content">
-    <p>Привет! Это мой первый HTML сайт.</p>
-    <p>Здесь есть разная полезная информация про программирование.</p>
-</div>
-
-<!-- Скрипт, который делает всю работу -->
 <script>
-function pageSearch() {
+function searchItems() {
+    // Получаем то, что ввел пользователь, и переводим в нижний регистр
     let input = document.getElementById('search-input').value.toLowerCase();
-    let content = document.getElementById('content');
-    let paragraphs = content.getElementsByTagName('p');
+    
+    // Находим все карточки на странице
+    let cards = document.getElementsByClassName('item-card');
 
-    for (let i = 0; i < paragraphs.length; i++) {
-        let text = paragraphs[i].innerText.toLowerCase();
-        if (input && text.includes(input)) {
-            paragraphs[i].style.backgroundColor = 'yellow'; // Подсвечиваем совпадение
+    // Перебираем каждую карточку
+    for (let i = 0; i < cards.length; i++) {
+        // Находим заголовок h<h3> внутри текущей карточки
+        let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+        
+        // Если текст из поиска есть в заголовке — показываем карточку, если нет — скрываем
+        if (title.includes(input)) {
+            cards[i].style.display = ""; // Показываем (возвращаем дефолтный стиль)
         } else {
-            paragraphs[i].style.backgroundColor = 'transparent'; // Сбрасываем подсветку
+            cards[i].style.display = "none"; // Скрываем
         }
     }
 }
