@@ -4,7 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Garden Tower Defense Values</title>
+<!-- Форма поиска -->
+<input type="text" id="search-input" placeholder="Введите слово для поиска...">
+<button onclick="pageSearch()">Искать</button>
 
+<!-- Текст, в котором ищем (для примера) -->
+<div id="content">
+    <p>Привет! Это мой первый HTML сайт.</p>
+    <p>Здесь есть разная полезная информация про программирование.</p>
+</div>
+
+<!-- Скрипт, который делает всю работу -->
+<script>
+function pageSearch() {
+    let input = document.getElementById('search-input').value.toLowerCase();
+    let content = document.getElementById('content');
+    let paragraphs = content.getElementsByTagName('p');
+
+    for (let i = 0; i < paragraphs.length; i++) {
+        let text = paragraphs[i].innerText.toLowerCase();
+        if (input && text.includes(input)) {
+            paragraphs[i].style.backgroundColor = 'yellow'; // Подсвечиваем совпадение
+        } else {
+            paragraphs[i].style.backgroundColor = 'transparent'; // Сбрасываем подсветку
+        }
+    }
+}
+</script>
 <style>
 body{
     margin:0;
