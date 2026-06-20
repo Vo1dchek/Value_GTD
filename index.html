@@ -4,25 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Garden Tower Defense Values</title>
-<input type="text" id="search-input" onkeyup="searchItems()" placeholder="Поиск предметов...">
 
-<div class="search-container">
-
-    <div class="item-card">
-        <img src="teslaflora.jpg" alt="">
-        <h3>Teslaflora</h3>
-        <p>74,5K</p>
-        <p>Rising</p>
-    </div>
-
-    <div class="item-card">
-        <img src="другой_юнит.jpg" alt="">
-        <h3>SuperNova</h3>
-        <p>50K</p>
-        <p>Stable</p>
-    </div>
-
-</div>
 <style>
 body{
     margin:0;
@@ -90,14 +72,14 @@ h1{
     text-shadow:0 0 10px limegreen;
     font-weight:bold;
 }
-}
+
 .Pell{
     font-size:26px;
     color:White;
     text-shadow:0 0 10px White;
     font-weight:bold;
 }
-}
+
 .Bell{
     font-size:26px;
     color:Red;
@@ -111,7 +93,21 @@ h1{
 <body>
 
 <h1>🌿 Garden Tower Defense Values 🌿</h1>
-
+<div style="text-align:center; margin-bottom:20px;">
+    <input
+        type="text"
+        id="search"
+        placeholder="Поиск юнита..."
+        style="
+            width:300px;
+            padding:12px;
+            border-radius:10px;
+            border:2px solid #00ff88;
+            background:#161616;
+            color:white;
+            font-size:16px;
+        ">
+</div>
 <div class="container">
 
     <div class="card">
@@ -141,6 +137,23 @@ h1{
         </div>
     </div>
 </div>
+<script>
+const search = document.getElementById("search");
 
+search.addEventListener("input", function() {
+    const value = this.value.toLowerCase();
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        const name = card.querySelector(".name").textContent.toLowerCase();
+
+        if (name.includes(value)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+</script>
 </body>
 </html>
