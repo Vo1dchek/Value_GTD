@@ -4,28 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Garden Tower Defense Values</title>
-<script>
-function searchItems() {
-    // Получаем то, что ввел пользователь, и переводим в нижний регистр
-    let input = document.getElementById('search-input').value.toLowerCase();
-    
-    // Находим все карточки на странице
-    let cards = document.getElementsByClassName('item-card');
+<input type="text" id="search-input" onkeyup="searchItems()" placeholder="Поиск предметов...">
 
-    // Перебираем каждую карточку
-    for (let i = 0; i < cards.length; i++) {
-        // Находим заголовок h<h3> внутри текущей карточки
-        let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-        
-        // Если текст из поиска есть в заголовке — показываем карточку, если нет — скрываем
-        if (title.includes(input)) {
-            cards[i].style.display = ""; // Показываем (возвращаем дефолтный стиль)
-        } else {
-            cards[i].style.display = "none"; // Скрываем
-        }
-    }
-}
-</script>
+<div class="search-container">
+
+    <div class="item-card">
+        <img src="teslaflora.jpg" alt="">
+        <h3>Teslaflora</h3>
+        <p>74,5K</p>
+        <p>Rising</p>
+    </div>
+
+    <div class="item-card">
+        <img src="другой_юнит.jpg" alt="">
+        <h3>SuperNova</h3>
+        <p>50K</p>
+        <p>Stable</p>
+    </div>
+
+</div>
 <style>
 body{
     margin:0;
